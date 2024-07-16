@@ -6,6 +6,7 @@ const link_jadwal_classy = load_link_jadwal_classy();
 const link_jadwal_resmi = load_link_jadwal_resmi();
 
 init_checkbox(list_jam);
+// init_date();
 
 function filter_classy(row) {
     const filter_date = new Date(document.getElementById('tanggal').value).toDateString();
@@ -20,10 +21,10 @@ function filter_classy(row) {
 
 function display(res, array, string, type) {
     for(let ruangan of array) {
-        const li = document.createElement('li');
-        li.innerHTML = `(${string}) ${ruangan}`;
-        li.setAttribute('class', type)
-        res.appendChild(li);
+        const item = document.createElement('div');
+        item.innerHTML = `${string} ${ruangan}`;
+        item.setAttribute('class', `result ${type} roboto-regular`)
+        res.appendChild(item);
     }
 }
 
@@ -38,11 +39,13 @@ function search_classy(results) {
 
     const res = document.getElementById('results');
     res.innerHTML = '';
-    display(res, tersedia, 'Tersedia', 'tersedia');
-    display(res, jadwal_classy, 'Terjadwal Classy', 'jadwal-classy');
-    display(res, jadwal_resmi, 'Terjadwal Resmi', 'jadwal-resmi');
+    display(res, tersedia, '✅(Tersedia)', 'tersedia');
+    display(res, jadwal_classy, '⚠️(Terjadwal Classy)', 'jadwal-classy');
+    display(res, jadwal_resmi, '⛔(Terjadwal Resmi)', 'jadwal-resmi');
     const gform = document.getElementById('gform');
     if(gform.style.display === 'none') {gform.style.display = 'block'}
+    document.getElementById('search-btn').setAttribute('style','opacity: 1');
+    document.getElementById('search-btn').innerHTML = 'Search!';
 }
 
 function to_bool(string) {
@@ -79,6 +82,8 @@ function search() {
     let tersedia = [];
     let jadwal_classy = [];
     let jadwal_resmi = [];
+    document.getElementById('search-btn').setAttribute('style','opacity: 0.6');
+    document.getElementById('search-btn').innerHTML = 'Loading...';
     Papa.parse(link_jadwal_resmi, {
         download: true,
         header: true,

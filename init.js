@@ -92,9 +92,24 @@ function init_checkbox(list_jam) {
         document.getElementById('jam').appendChild(checkbox_jam);
         const label_jam = document.createElement('label');
         label_jam.setAttribute('for', jam);
+        label_jam.setAttribute('class', 'roboto-regular')
         label_jam.innerHTML = jam;
         document.getElementById('jam').appendChild(label_jam);
         const br = document.createElement('br')
         document.getElementById('jam').appendChild(br);
     }
+}
+
+function init_date() {
+    let date = new Date(),
+        day = date.getDate(),
+        month = date.getMonth() + 1,
+        year = date.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    const todayDate = `${year}-${month}-${day}`;
+
+    document.getElementById('tanggal').defaultValue = todayDate;
 }

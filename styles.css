@@ -1,3 +1,72 @@
+* {
+    color: #202124;
+}
+
+body {
+    background-color: #fae3e1;
+}
+
+.area {
+    background-color: #ffffff;
+    border-radius: 8pt;
+    padding: 6pt;
+    display: inline-flex;
+    width: calc(100% - 16px);
+}
+
+.fixed-width {
+    width: 330px;
+}
+
+.container {
+    margin: 6pt;
+}
+
+.component {
+    margin: 0.5em 0 0.5em;
+}
+
+.title {
+    font-size: 3em;
+    margin: 0.3em 0 0.3em;
+}
+
+.line {
+    border: solid black 1px;
+    opacity: 0.1;
+}
+
+.input {
+    margin: 5px 4px 5px;
+}
+
+.btn {
+    width: 100%;
+    color: #ffffff;
+    background-color: #db4437;
+    border-radius: 4pt;
+    border: none;
+    padding: 0.3em;
+    cursor: pointer;
+}
+
+.flex {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.no-header {
+    padding-top: 0.6em;
+}
+
+.result {
+    padding: 0.3em;
+    margin: 0.3em;
+    border-radius: 0.3em;
+    width: 100%;
+}
+
 .tersedia {
     background-color: lightgreen;
 }
@@ -8,4 +77,13 @@
 
 .jadwal-classy {
     background-color: khaki;
+}
+
+#warning {
+    background-color: lightgoldenrodyellow;
+}
+
+#main {
+    display: flex;
+    width: calc(100%-16px);
 }
