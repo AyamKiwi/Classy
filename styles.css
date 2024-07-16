@@ -87,3 +87,20 @@ body {
     display: flex;
     width: calc(100%-16px);
 }
+
+#footer {
+    background-color: #db4437;
+    color: white;
+    text-align: center;
+    margin-top: 16px;
+    padding: 16pt;
+    border-radius: 8pt;
+  }
+
+.fixed-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: calc(100% - 16px);
+    margin: 8px;
+}

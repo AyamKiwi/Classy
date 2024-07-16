@@ -46,6 +46,7 @@ function search_classy(results) {
     if(gform.style.display === 'none') {gform.style.display = 'block'}
     document.getElementById('search-btn').setAttribute('style','opacity: 1');
     document.getElementById('search-btn').innerHTML = 'Search!';
+    document.getElementById('footer').classList.remove('fixed-footer')
 }
 
 function to_bool(string) {
