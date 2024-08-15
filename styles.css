@@ -12,6 +12,7 @@ body {
     padding: 6pt;
     display: inline-flex;
     width: calc(100% - 16px);
+    margin: 0.3em 0 0.3em;
 }
 
 .fixed-width {
@@ -64,7 +65,7 @@ body {
     padding: 0.3em;
     margin: 0.3em;
     border-radius: 0.3em;
-    width: 100%;
+    width: calc(100%/4 - 1.8em);
 }
 
 .tersedia {
@@ -84,7 +85,7 @@ body {
 }
 
 #main {
-    display: flex;
+    display: block;
     width: calc(100%-16px);
 }
 
@@ -95,7 +96,12 @@ body {
     margin-top: 16px;
     padding: 16pt;
     border-radius: 8pt;
-  }
+}
+
+#gform-btn {
+    font-size:x-large;
+    margin-top: 0.6em;
+}
 
 .fixed-footer {
     position: fixed;
@@ -103,4 +109,16 @@ body {
     bottom: 0;
     width: calc(100% - 16px);
     margin: 8px;
+}
+
+@media only screen and (max-width: 1080px) {
+    .fixed-width {
+        width: calc(100% - 12pt);
+    }
+    .area {
+        display: block;
+    }
+    .result {
+        width: calc(100% - 0.6em - 18pt);
+    }
 }
